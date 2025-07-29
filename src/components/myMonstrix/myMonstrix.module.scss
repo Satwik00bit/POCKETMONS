@@ -1,0 +1,24 @@
+@import 'src/styles/global';
+
+
+
+.title{
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $secondary-color-500;
+}
+.monstrix_container{
+  display: flex;
+  height: 369px;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  margin: 10px 0;
+}
+.monstrix_card{
+  @extend %monstrix_card;
+}
+
+.card_image{
+  @extend %monstrix_image;
+}

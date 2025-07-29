@@ -1,0 +1,173 @@
+
+$primary-color-900: #212529;
+$primary-color-800: #343a40;
+$primary-color-700: rgba(6, 6, 6, 0.4);
+$primary-color-600: rgba(0, 0, 0, 0.4);
+$primary-color-500: #adb5bd;
+$primary-color-400: #ced4da;
+$primary-color-300: #dee2e6;
+$primary-color-200: #e9ecef;
+$primary-color-100: #f8f9fa;
+
+$secondary-color-900: #081c15;
+$secondary-color-800: #1b4332;
+$secondary-color-700: #2d6a4f;
+$secondary-color-600: #FFD700;
+$secondary-color-500: #D4AF37;
+$secondary-color-400: #938917;
+$secondary-color-300: #95d5b2;
+$secondary-color-200: #b7e4c7;
+$secondary-color-100: #ffffff;
+
+$third-color-600: #ae3b31;
+$third-color-500: #d64541;
+
+$box-shadow-black-600: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
+$box-shadow-black-100: 0 5px 10px 1px rgba(0, 0, 0, 0.2);
+$box-shadow-black-anti-100: 0 5px 10px 1px rgba(0, 0, 0, 0.2) inset;
+
+$box-shadow-green-100: 0 0 100px 1px rgba(89, 214, 160, 0.3);
+
+
+
+%button{
+  cursor: pointer;
+  background-color: $secondary-color-500;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  min-width: 100px;
+  color: $secondary-color-100;
+  transition: all 0.1s ease;
+  &:hover{
+    background-color: $secondary-color-600;
+    box-shadow: $box-shadow-black-100;
+    transform: translateY(1px);
+  }
+}
+%red_button{
+  @extend %button;
+  background-color: $third-color-500;
+  &:hover{
+    background-color: $third-color-600;
+  }
+}
+%button_is_disabled{
+  color: $secondary-color-900;
+  background-color: $primary-color-500;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 5px;
+  min-width: 100px;
+  box-shadow: $box-shadow-black-anti-100;
+  transform: translateY(2px);
+}
+
+%input_block{
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  width: 200px;
+  box-sizing: border-box;
+  transition: border-left 0.1s ease;
+  &:focus{
+    border-left: 4px solid $secondary-color-400;
+  }
+}
+
+%block{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+%dark_background{
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: black_background_appear 0.5s ease forwards;
+}
+
+@keyframes black_background_appear {
+  0% {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+%blur_background{
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //animation: blur_background_appear 0.2s ease forwards;
+}
+@keyframes blur_background_appear {
+  0% {
+    backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+  25% {
+    backdrop-filter: blur(5px);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+
+%monstrix_image{
+  width: 100px;
+  image-rendering: pixelated;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+%monstrix_card{
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  height: max-content;
+  background-color: $secondary-color-500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
+  &:hover{
+    background-color: $secondary-color-600;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+}
+
+%spring_animation{
+  animation: spring_animation 2s ease infinite;
+}
+
+@keyframes spring_animation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

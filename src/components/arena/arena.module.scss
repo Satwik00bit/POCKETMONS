@@ -1,0 +1,155 @@
+@import 'src/styles/global';
+
+
+.title{
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $secondary-color-500;
+}
+.main_container{
+  display: flex;
+
+  .fight_block{
+    width: 70%;
+    min-height: 300px;
+    //background-color: $primary-color-500;
+    border: 2px solid $secondary-color-500;
+    @extend %block;
+
+    .cards_block{
+      display: flex;
+      .my_card_block, .enemy_card_block{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        .my_card, .enemy_card{
+          width: fit-content;
+          @extend %monstrix_card;
+          @extend %spring_animation;
+        }
+        .my_monster_is_attack{
+          //background-color: orange;
+          animation: left_to_right_attack 1s linear forwards;
+        }
+        .enemy_card{
+          background-color: $third-color-500;
+          &:hover{
+            background-color: $third-color-600;
+          }
+        }
+        .enemy_is_attack{
+          animation: right_to_left_attack 1s linear forwards;
+        }
+      }
+      .monster_image{
+        @extend %monstrix_image;
+      }
+    }
+    .button_block{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      //background-color: #081c15;
+      height: 45%;
+      .button_attack{
+        @extend %button;
+      }
+      .button_heal{
+        @extend %button;
+      }
+      .button_tame{
+        @extend %button;
+      }
+      .button_leave{
+        @extend %red_button;
+      }
+      .disabled_button{
+        @extend %button_is_disabled;
+      }
+      .stuff_buttons_block{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .fight_log_block{
+    width: 30%;
+    //min-height: 300px;
+    @extend %block;
+    border: 2px solid $secondary-color-500;
+
+    .log_title{
+      text-align: center;
+    }
+    .log{
+      //display: flex;
+      //flex-direction: column;
+      //justify-content: flex-end;
+      height: 300px;
+      overflow-y: auto;
+      box-sizing: border-box;
+
+      .log_elem{
+        background-color: $primary-color-700;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 3px 0;
+        //border-bottom: 2px solid $secondary-color-700;
+        &:last-child{
+          background-color: $primary-color-900;
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes left_to_right_attack {
+  0% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(20%);
+  }
+  35% {
+    transform: translateX(100%);
+    //background-color: $secondary-color-500;
+  }
+  40% {
+    transform: translateX(100%);
+    //background-color: #ae8c18;
+  }
+  45% {
+    transform: translateX(100%);
+    //background-color: $secondary-color-500;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes right_to_left_attack {
+  0% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(-20%);
+  }
+  35% {
+    transform: translateX(-100%);
+    //background-color: $secondary-color-500;
+  }
+  40% {
+    transform: translateX(-100%);
+    //background-color: #ae8c18;
+  }
+  45% {
+    transform: translateX(-100%);
+    //background-color: $secondary-color-500;
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

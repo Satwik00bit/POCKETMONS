@@ -1,0 +1,27 @@
+@import 'src/styles/global';
+
+.full_card{
+  margin-bottom: 10px;
+}
+.image_n_features{
+  display: flex;
+}
+.card_image{
+  @extend %monstrix_image;
+}
+.features{
+  margin-left: 10px;
+}
+.description{
+  color: $secondary-color-200;
+}
+.lvl_container{
+  display: flex;
+}
+.xp{
+  margin-left: 10px;
+}
+.new_lvl{
+  color: $secondary-color-300;
+  font-weight: bolder;
+}

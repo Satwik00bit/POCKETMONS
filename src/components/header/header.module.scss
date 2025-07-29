@@ -1,0 +1,42 @@
+@import 'src/styles/global';
+@keyframes flicker {
+  0%   { opacity: 1; text-shadow: 0 0 5px gold, 0 0 10px orange; }
+  50%  { opacity: 0.8; text-shadow: 0 0 3px gold; }
+  75%  { opacity: 1; text-shadow: 0 0 7px yellow, 0 0 15px gold; }
+  100% { opacity: 0.9; text-shadow: 0 0 4px orange; }
+}
+.header{
+  @extend %block;
+  grid-area: header;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+  background-color: $primary-color-700;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: flicker 3s infinite;
+}
+.user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+}
+.coins{
+  display: flex;
+  justify-content: center;
+  align-items: right;
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+  .coins_count{
+    padding-right: 10px;
+  }
+}
