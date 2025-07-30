@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "npm start --prefix server",
-    "build": "npm run build --prefix client",
+    "build": "npm run build --prefix monstrix",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
