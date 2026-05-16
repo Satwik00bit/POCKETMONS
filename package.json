@@ -1,6 +1,7 @@
 {
   "name": "monstrix",
   "version": "0.1.0",
+  "homepage": "https://Satwik00bit.io/POCKETMONS",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -19,8 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm start --prefix server",
-    "build": "npm run build --prefix monstrix",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",

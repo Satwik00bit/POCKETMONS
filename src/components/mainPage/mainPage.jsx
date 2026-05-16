@@ -7,7 +7,7 @@ import {useSelector} from "react-redux";
 function MainPage(props) {
 	return (
 		<>
-			<div className={styles.title}>{'Welcome to the POKeMON game!'}</div>
+			<div className={styles.title}>{'Welcome to the POKETMONS game!'}</div>
 			<div className={styles.content_wrapper}>
 				<div className={styles.about_game}>
 					{
