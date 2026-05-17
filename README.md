@@ -14,7 +14,7 @@ This game is a simple turn based game with different playable monsters or "mons"
 ## Start-up instructions
 
 *You can view the finished version of the site by clicking on the link:* 
-(https://pocketmons.onrender.com/)
+(https://pocketmons.vercel.app/)
 
 #### If you want to run the site on your computer, follow these instructions:
 1. Make sure you have an LTS version of Node.js installed on your computer.
